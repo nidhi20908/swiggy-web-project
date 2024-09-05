@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="swiggy1.css"> 
+    <title>Restaurant 1 Menu</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:lightblack;
+            color:white
+}
+
+        header {
+            background-color: purple;
+            color: orange;
+            padding: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        ul li {
+            margin-right: 20px;
+        }
+
+        ul li:last-child {
+            margin-right: 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .menu {
+            text-align: center;
+        }
+
+        .meal {
+            display: inline-block;
+            margin: 20px;
+            text-align: left;
+        }
+
+        .meal img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+	.add-to-cart {
+            background-color: #fc8014;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .total {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Swiggy<br>Instamart</div>
+            <ul>
+                
+                <li><a href="about.html">About</a></li>
+                <li><a href="offers.html">Offers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu">
+        <h2> Menu</h2>
+
+        <div class="meal">
+            <img src="C:\Users\User\Pictures\ANDHRA.jfif" alt="Meal 1" height=200" width="300">
+            <h3>Meal 1</h3>
+            <p>The basic Andhra meals</p>
+            <p>Price:299</p>
+            <button class="add-to-cart" onclick="addToCart(299)">Add to Cart</button>
+        </div>
+
+        <div class="meal">
+            <img src="C:\Users\User\Pictures\DOSA.jfif" alt="Meal 2" height="200" width="300">
+            <h3>Meal 2</h3>
+            <p>Masala dosa</p>
+            <p>Price:100</p>
+            <button class="add-to-cart" onclick="addToCart(100)">Add to Cart</button>
+        </div>
+	<div class="meal">
+            <img src="C:\Users\User\Pictures\THALI.jpg" alt="Meal 3" height="200" width="300">
+            <h3>Meal 3</h3>
+            <p>Breakfast Thali</p>
+            <p>Price:200</p>
+            <button class="add-to-cart" onclick="addToCart(200)">Add to Cart</button>
+            
+        </div>
+	<div class="total" id="total">Total: $0</div>
+
+    </section>
+
+    <script src="script.js"></script>
+	<script>
+        let totalAmount = 0;
+
+        function addToCart(price) {
+            totalAmount += price;
+            document.getElementById("total").innerText = "Total: $" + totalAmount;
+        }
+    </script>
+
+</body>
+</html>
